@@ -1,0 +1,28 @@
+version: "3"
+
+services:
+
+        frontend:
+                build: ./FrontEnd
+                network_mode: host
+                restart: on-failure 
+        backend:
+                build: ./backend
+                depends_on:
+                       - database
+                network_mode: host
+                     
+                restart: on-failure
+        database:
+                build: ./db
+                environment:
+                        MYSQL_ROOT_PASSWORD: jalad@23
+                network_mode: host
+                restart: always
+                volumes:
+                      - db-volume:/db/node_volumes
+
+volumes:
+       db-volume:
+      
+
