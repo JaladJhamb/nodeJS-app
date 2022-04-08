@@ -2,7 +2,7 @@ const express = require('express')
 const fetch = require('node-fetch')
 const router = express.Router()
 
-const host= 'http://172.31.35.152:8000'
+const host= 'http://172.31.13.25:8000'
 
 router.get('/', (req, res)=>{
     res.render('index')
