@@ -15,21 +15,21 @@ pipeline{
         stage('Build for frontend image') {
 
 			steps {
-				sh "docker build -t JaladJhamb/Frontend:latest ./FrontEnd"
+				sh "docker build -t shankey23/frontend:latest ./FrontEnd"
 				
 			}
         }
         stage('Build for backend image') {
 
 			steps {
-				sh "docker build -t JaladJhamb/backend:latest ./backend"
+				sh "docker build -t shankey23/backend:latest ./backend"
 			
 			}
         }    
         stage('Build for mysql image') {
 
 			steps {
-				sh "docker build -t JaladJhamb/mysql:latest ./db"
+				sh "docker build -t shankey23/mysql:latest ./db"
 			
 			}
 		}
@@ -38,12 +38,12 @@ pipeline{
 			steps {
 				script{
                     withCredentials([string(credentialsId: 'Shankey23', variable: 'dockerhub')]) {
-                        sh "docker login -u Shankey23 -p ${dockerhub}"
+                        sh "docker login -u shankey23 -p ${dockerhub}"
 
 
-                        sh "docker push JaladJhamb/frontend:latest"
-                        sh "docker push JaladJhamb/backend:latest"
-                        sh "docker push JaladJhamb/mysql:latest"
+                        sh "docker push shankey23/frontend:latest"
+                        sh "docker push shankey23/backend:latest"
+                        sh "docker push shankey23/mysql:latest"
                     }
                 
 			}
