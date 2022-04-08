@@ -8,7 +8,7 @@ const app = express();
 app.use(cors())
 
 // const corsOptions = {
-//   origin: "http://172.31.24.144:8000"
+//   origin: "http://172.31.35.152:8000"
 // };
 
 // app.use(cors(corsOptions));
