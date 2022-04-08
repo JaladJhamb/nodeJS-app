@@ -15,21 +15,21 @@ pipeline{
         stage('Build for frontend image') {
 
 			steps {
-				sh "docker build -t shankey23/frontend:latest ./FrontEnd"
+				sh "docker build -t shankey23/frontend:latest FrontEnd/."
 				
 			}
         }
         stage('Build for backend image') {
 
 			steps {
-				sh "docker build -t shankey23/backend:latest ./backend"
+				sh "docker build -t shankey23/backend:latest backend/."
 			
 			}
         }    
         stage('Build for mysql image') {
 
 			steps {
-				sh "docker build -t shankey23/mysql:latest ./db"
+				sh "docker build -t shankey23/mysql:latest db/."
 			
 			}
 		}
