@@ -2,9 +2,9 @@ pipeline{
 
     agent any
 
-    // environment{
-    //     DOCKERHUB_CREDENTIALS=credentials('Dockerhub')
-    // }
+    environment{
+         DOCKERHUB_CREDENTIALS=credentials('Dockerhub')
+    }
     stages{
         stage('gitclone'){
 
