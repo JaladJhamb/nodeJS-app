@@ -15,21 +15,21 @@ pipeline{
         stage('Build for frontend image') {
 
 			steps {
-				sh "docker build -t JaladJhamb/Frontend:latest FrontEnd/."
+				sh "docker build -t JaladJhamb/Frontend:latest ./FrontEnd"
 				
 			}
         }
         stage('Build for backend image') {
 
 			steps {
-				sh "docker build -t JaladJhamb/backend:latest backend/."
+				sh "docker build -t JaladJhamb/backend:latest ./backend"
 			
 			}
         }    
         stage('Build for mysql image') {
 
 			steps {
-				sh "docker build -t JaladJhamb/mysql:latest db/."
+				sh "docker build -t JaladJhamb/mysql:latest ./db"
 			
 			}
 		}
